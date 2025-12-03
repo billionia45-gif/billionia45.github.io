@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Onyedire - English 1007 Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #000E2F;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 14, 47, 0.9), rgba(0, 14, 47, 0.85)), 
+                        url('https://i.ibb.co/Kz9t67tj/Dream-Team-1992-US-Mens-Olympic-Basketball-Team-Gold-Medal-Barcelona-Michael-Jordan.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,14,47,0.95) 0%, rgba(14,55,114,0.85) 100%);
+            z-index: 1;
+        }
+        
+        .basketball-float {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 2;
+            background-size: cover;
+            background-position: center;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .basketball-float:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            background-image: url('https://i.ibb.co/21znHV5P/basketball-shoes.jpg');
+            animation-delay: 0s;
+        }
+        
+        .basketball-float:nth-child(2) {
+            top: 60%;
+            right: 8%;
+            background-image: url('https://i.ibb.co/8LTjqCF2/basketball-shoe-medium-773x380.webp');
+            animation-delay: 2s;
+        }
+        
+        .basketball-float:nth-child(3) {
+            bottom: 15%;
+            left: 10%;
+            background-image: url('https://i.ibb.co/nqZ4VVFF/60a9284cc63078f5d69b5d9a2ac61a07.jpg');
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #000E2F;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .course-title {
+            color: #0E3772;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #000E2F;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: url('https://i.ibb.co/LXrC3fcy/163789.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        .profile-info p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+        
+        .contact {
+            color: #0E3772;
+            font-weight: 600;
+        }
+        
+        .basketball-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(14, 55, 114, 0.15), rgba(0, 14, 47, 0.2));
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .basketball-showcase img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+        
+        .basketball-showcase img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        
+        .inquiry-section {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .inquiry-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('https://i.ibb.co/nqZ4VVFF/60a9284cc63078f5d69b5d9a2ac61a07.jpg');
+            background-size: cover;
+            opacity: 0.08;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .inquiry-section h2 {
+            color: #000E2F;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .inquiry-section p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        
+        nav h2 {
+            text-align: center;
+            color: #000E2F;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .nav-card {
+            background: linear-gradient(135deg, #000E2F 0%, #0E3772 100%);
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: white;
+            text-decoration: none;
+            display: block;
+            border: 2px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-card:nth-child(1)::before {
+            background-image: url('https://i.ibb.co/8LTjqCF2/basketball-shoe-medium-773x380.webp');
+        }
+        
+        .nav-card:nth-child(2)::before {
+            background-image: url('https://i.ibb.co/LXrC3fcy/163789.jpg');
+        }
+        
+        .nav-card:nth-child(3)::before {
+            background-image: url('https://i.ibb.co/21znHV5P/basketball-shoes.jpg');
+        }
+        
+        .nav-card:hover::before {
+            opacity: 0.2;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,14,47,0.5);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .nav-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 12px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-card p {
+            opacity: 0.9;
+            font-size: 1em;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .content-section h2 {
+            color: #000E2F;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        .back-btn {
+            background: #000E2F;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 25px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+        }
+        
+        .back-btn:hover {
+            background: #0E3772;
+            transform: translateX(-5px);
+        }
+        
+        .project-content {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .home-section.hidden {
+            display: none;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .basketball-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .basketball-float {
+                width: 120px;
+                height: 120px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+            }
+            
+            .profile-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <!-- Floating basketball imagery -->
+        <div class="basketball-float"></div>
+        <div class="basketball-float"></div>
+        <div class="basketball-float"></div>
+        
+        <div class="container">
+            <div class="home-section">
+                <header>
+                    <h1>Bill Onyedire</h1>
+                    <p class="course-title">English 1007: The Power of Storytelling</p>
+                    
+                    <div class="profile-section">
+                        <div class="profile-image"></div>
+                        <div class="profile-info">
+                            <p>Hello! I'm Bill Onyedire, a student-athlete at UConn exploring the fascinating world of storytelling and its impact on our lives. Through English 1007, I'm examining how narratives shape our understanding of reality, influence our beliefs, and connect us as humans—both on and off the court.</p>
+                            <p class="contact">Contact: <a href="mailto:billionia45@gmail.com" style="color: #0E3772; text-decoration: none; font-weight: 600;">billionia45@gmail.com</a> | <a href="mailto:mdg24008@uconn.edu" style="color: #0E3772; text-decoration: none; font-weight: 600;">mdg24008@uconn.edu</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="basketball-showcase">
+                        <img src="https://i.ibb.co/Kz9t67tj/Dream-Team-1992-US-Mens-Olympic-Basketball-Team-Gold-Medal-Barcelona-Michael-Jordan.webp" alt="Dream Team 1992 Basketball">
+                        <img src="https://i.ibb.co/8LTjqCF2/basketball-shoe-medium-773x380.webp" alt="Basketball shoes">
+                        <img src="https://i.ibb.co/LXrC3fcy/163789.jpg" alt="Basketball action">
+                        <img src="https://i.ibb.co/21znHV5P/basketball-shoes.jpg" alt="Basketball shoes on court">
+                        <img src="https://i.ibb.co/nqZ4VVFF/60a9284cc63078f5d69b5d9a2ac61a07.jpg" alt="Basketball player">
+                    </div>
+                </header>
+                
+                <div class="inquiry-section">
+                    <h2>Course Inquiry: Why Are We So Attracted to Stories?</h2>
+                    <p>What is the power of storytelling? This is the central question driving our exploration in English 1007. As humans, we're naturally drawn to stories—we seek them out, create them, and find them everywhere we go. From ancient myths to modern internet legends, we transform our experiences and the world around us into narratives that help us make sense of reality.</p>
+                    
+                    <p>Stories have an incredible ability to connect us, to make us feel understood, and to shape our beliefs and behaviors. They work across all contexts—in marketing, education, entertainment, sports narratives, and even our personal relationships. Once you figure out your story, you can reach people in profound ways because storytelling is fundamental to human nature.</p>
+                    
+                    <p>However, there's a darker side to this power. Some stories can run amok, spreading beyond their intended boundaries and causing real harm. The Slenderman case serves as a perfect and tragic example: an internet creepypasta evolved from harmless fiction into something that influenced vulnerable minds with devastating consequences. This course examines both the magic and the danger of storytelling in our digital age, asking us to consider: How do we harness the power of stories responsibly? How do we protect against narratives that blur the line between fiction and reality?</p>
+                </div>
+                
+                <nav>
+                    <h2>Course Projects</h2>
+                    <div class="nav-grid">
+                        <a href="#" class="nav-card" onclick="showProject('project1'); return false;">
+                            <h3>Project 1</h3>
+                            <p>Multimodal Obstacle Essay</p>
+                        </a>
+                        <a href="#" class="nav-card" onclick="showProject('project2'); return false;">
+                            <h3>Project 2</h3>
+                            <p>Rhetorical Analysis: Slenderman</p>
+                        </a>
+                        <a href="#" class="nav-card" onclick="showProject('project3'); return false;">
+                            <h3>Project 3</h3>
+                            <p>Research Podcast</p>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            
+            <div id="project1" class="content-section">
+                <button class="back-btn" onclick="showHome()">← Back to Home</button>
+                <h2>Project 1: Multimodal Obstacle Essay</h2>
+                <div class="project-content">
+                    <iframe src="https://docs.google.com/document/d/1YklEJFAQ6pnqtHe4m91kDXaC2YM67jlDRbYLqKK5xBE/preview" width="100%" height="800" style="border: 2px solid #000E2F; margin-top: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);"></iframe>
+                </div>
+            </div>
+            
+            <div id="project2" class="content-section">
+                <button class="back-btn" onclick="showHome()">← Back to Home</button>
+                <h2>Project 2: Rhetorical Analysis of Slenderman Documentary</h2>
+                <div class="project-content">
+                    <p style="text-align: center; margin-bottom: 10px;"><strong>Analysis Focus:</strong> HBO's <em>Slenderman</em> (2016), directed by Irene Taylor Brodsky</p>
+                    <p style="text-align: center; margin-bottom: 30px;"><strong>Segment Analyzed:</strong> 00:12:10 – 00:18:10</p>
+                    
+                    <div style="max-width: 800px; margin: 0 auto; font-size: 1.05em; line-height: 1.8;">
+                        <p>HBO's <em>Slenderman</em> (2016), directed by Irene Taylor Brodsky, dives straight into the shocking 2014 stabbing in Waukesha, Wisconsin. Two girls, both just twelve—Morgan Geyser and Anissa Weier—attacked their friend because they believed it would please Slenderman, a creepy internet legend that started online. The documentary doesn't try to sensationalize what happened. Instead, Brodsky and her team dig into why it happened. They argue that the early, unfiltered internet became a dangerous playground for kids like Morgan and Anissa, who were left to wander its strangest corners alone. This wasn't just about two bad apples, they say—it's a complicated tragedy, born out of digital myths, teenage vulnerability, and untreated mental illness. Instead of just focusing on the horror, the film asks people to understand how something like this can happen, and to take it as a serious warning. For this analysis, I'm looking at the section from 00:12:10 to 00:18:10, which covers the girls' first steps into the world of Slenderman. Through careful analysis of how the filmmakers use cinematography, mise-en-scène, composition, editing, and sound, I will demonstrate how they drive home their point and push for more digital awareness and parental involvement.</p>
+
+                        <p><em>Slenderman</em> came out in 2016, close on the heels of the 2014 stabbing and right in the middle of the court cases. That timing matters. People were already worried about how the internet and social media were changing kids. Platforms like YouTube and Creepypasta were everywhere, but most parents didn't really get what went on there. The filmmakers don't hide their opinion: they believe the digital world played a huge part in this tragedy. They point to the internet's algorithms, its anonymity, and the way it blurs fantasy and reality—all of which, in their view, pulled Morgan and Anissa in. The section I'm focusing on really lays out how the "infection" started online and spread into the girls' minds. The film doesn't ask viewers to pass judgment. Instead, it turns us into witnesses, watching two kids get swept up in something bigger than themselves, making it clear this is a failure of the system and not just individual evil.</p>
+
+                        <p>The way the camera works in this part of the film pulls you in close, creating a voyeuristic descent that makes you feel like you're right there with the girls. It's both intimate and uncomfortable. The shots are tight, with lots of extreme close-ups that linger on the pixelated, eerie images of Slenderman on their screens at 00:12:25. As depicted in the documentary around this timestamp, the parents and investigators describe the disturbing nature of what the girls were viewing online. You see Morgan's and Anissa's eyes at 00:13:15, wide and locked in, creating a sense of tunnel vision where the rest of the world just disappears. It's claustrophobic. You're not watching from a safe distance; you're right there, falling down the rabbit hole with them.</p>
+
+                        <p>When the camera shows the screens, it's head-on, positioning viewers to see exactly what the girls see. But when it shows the girls themselves, the angle often looks down from above at 00:14:50, almost as if the technology is looming over them. The documentary's narration around this moment discusses how children interact with technology and social media, emphasizing the power imbalance between vulnerable young minds and addictive digital platforms. They look small, hunched, and fragile—kids overwhelmed by something much bigger than themselves. This cinematographic choice reinforces the filmmakers' central argument that these children were victims of forces beyond their control.</p>
+
+                        <p>The camera movement further emphasizes this entrapment. As the lens drifts slowly over creepy fan art and scrolls down endless forum posts at 00:15:30, it mimics the way you'd read or browse online, drawing you deeper into the digital world. There's nothing smooth or polished here; sometimes the camera feels shaky, almost hesitant, echoing the anxious, secretive way the girls are exploring this world. This technique doesn't just show the audience what the girls saw—it makes us experience the disorienting, addictive nature of their online journey.</p>
+
+                        <p>Beyond the camera work, the staging throughout this segment highlights how the ordinary and the disturbing mix together in ways that feel deeply unsettling. Almost everything happens in bedrooms—places that are supposed to be safe for kids. There are stuffed animals, bright blankets, and schoolbooks visible at 00:13:40, all the usual signs of childhood innocence. But then there's the laptop, throwing an icy glow across the room. The danger isn't outside; it's right there, sitting on the bed or desk, invading what should be their safest space. Parents in the documentary discuss discovering their daughters on their computers late at night (around 00:14:00), describing how they found the girls absorbed in Slenderman content during hours when they should have been sleeping. The internet isn't just influencing them from afar; it's moved in, transforming a sanctuary into a portal for psychological invasion.</p>
+
+                        <p>The lighting throughout these scenes reinforces this transformation. Everything is dark, with sharp contrasts where the only real light comes from the computer screen, casting deep shadows everywhere else at 00:14:10. This turns a familiar bedroom into something creepy. Suddenly, any shadow could be hiding Slenderman. The blue glow flickers on the girls' faces, sometimes making them look innocent, sometimes making them look haunted. It's unsettling and drives home just how much their world has changed. You can observe how this lighting choice creates what film scholars call "psychological realism," where the visual environment reflects the characters' internal emotional state.</p>
+
+                        <p>The way this film is put together makes it increasingly hard to tell where reality ends and the digital world begins. It's a compositional choice that proves central to the filmmakers' argument. There's a clear split in the color palette that reinforces this boundary blurring. The bedroom (the "real" world) glows with soft, gentle colors. Look at the screens, though, and you're hit with harsh blacks, blinding whites, and sickly greens. The documentary's narration around 00:15:00 explains how Creepypasta and internet horror content affects young people's perception of reality. The online images look rough and grainy on purpose, almost like "found footage." That style tricks your eyes and brain, making the myth feel more real than it should, demonstrating how easily the line between fiction and reality can dissolve for vulnerable minds.</p>
+
+                        <p>Even more striking is how the filmmakers layer digital content directly over the real world rather than keeping it confined to screens. You'll see Anissa sitting on her bed at 00:16:20, but floating over her image are ghostly fragments of text from a Creepypasta story. These jagged, diagonal lines slice through the calm, horizontal lines of her bed and the solid vertical of her body. It's as if the internet is crashing into her life, breaking through her safe space in a visual representation of psychological intrusion. The girl remains the center, the "positive space," but digital words start filling in every gap around her. You can almost see fiction creeping into her mind and her world, making the abstract concept of "internet influence" tangible and visible.</p>
+
+                        <p>The editing throughout this section isn't just flashy. It's deliberately designed to mess with your head, mimicking how someone falls into an online obsession. Right away, you get hit with a barrage of images at 00:12:10 through 00:13:00: a YouTube thumbnail, a warped shot of Slenderman, a scream from a viral video, someone's fan art. Experts interviewed in the documentary discuss algorithm-driven content and digital "rabbit holes" that pull users deeper into niche content with each click. It's quick and jarring, like the feeling of doomscrolling late at night, sucked into an endless feed. You barely have time to process anything before the next shock lands. The pace makes it feel like you can't escape, conjuring this anxious, claustrophobic dread that mirrors the girls' own spiraling obsession.</p>
+
+                        <p>This editing strategy also relies heavily on contrast to create emotional impact. One minute, you're watching shaky, creepy black and white footage of Slenderman. The next, you see Morgan and Anissa in a sunlit home video, laughing and playing between 00:17:00 and 00:17:30. Parents describe their daughters before the obsession began (around 00:17:15), recalling how they were normal, happy girls who loved typical childhood activities. This whiplash is the emotional heart of the film. It throws the innocence of childhood right up against the darkness they stumble into. That contrast isn't just sad; it's devastating. You feel the tragedy deeply, and everything that comes later seems both unavoidable and heartbreaking. The juxtaposition forces viewers to confront how quickly and completely a child's world can be transformed.</p>
+
+                        <p>Sound does tremendous heavy lifting throughout this section, building what might be called an architecture of fear that supports the visual elements. There's this low, steady synth hum underneath almost everything from 00:12:15 onward. It doesn't belong to the girls' world; it's there to haunt you, to make Slenderman feel close even when he's not visible on screen. Add in those faint, warped whispers at 00:15:45—they're barely there, but they're enough to make the hair on your arms stand up. The documentary depicts how the girls described sensing Slenderman's presence (around 00:16:00), with testimony revealing their growing belief that he was watching them and communicating through the internet. These sounds pile on the paranoia and unease, echoing what's going on in the girls' heads and creating an auditory representation of psychological disturbance.</p>
+
+                        <p>The filmmakers also make strategic use of diegetic sound. Real-world noises like mouse clicks, keyboard taps, and the sounds from the videos the girls are watching all appear in the mix. But even these familiar sounds get twisted, echoing weirdly or distorted until you're not sure what's real anymore. The confusion in the sound design matches the confusion on screen, blurring the line between reality and fiction in yet another layer. And then, at the very end of the segment, everything just stops. Complete silence descends at 00:18:05. It's jarring, and it leaves you alone with your thoughts, making the moment land even harder and forcing viewers to sit with the weight of what they've just witnessed.</p>
+
+                        <p>Through these carefully orchestrated film techniques, the filmmakers weave in three classic rhetorical appeals to build their persuasive case. First, the film hits you right in the gut through pathos. You see the clash—sweet childhood moments up against scary, disturbing images. Close-ups of scared faces and creepy sounds pull out more than just fear. You feel pity, dread, and a deep concern for these kids. Parents make emotional statements throughout the documentary (particularly around 00:17:20) about their daughters and express profound guilt about not recognizing the warning signs earlier. The emotional manipulation is deliberate and effective, ensuring that viewers don't simply judge the girls as monsters but instead empathize with them as victims.</p>
+
+                        <p>However, the filmmakers don't just tug at your heart. They lay out a logical chain of causation that appeals to logos. You watch as exposure to gripping online content leads to obsession, which then warps reality in a clear progression. They use actual websites, forums, and the same kinds of videos the girls probably saw, grounding the story in the real world rather than abstract speculation. This logical framework suggests that given similar circumstances, other children could follow the same dangerous path, making the case that systemic change is necessary.</p>
+
+                        <p>Finally, the filmmakers establish their ethos by coming across as trustworthy guides through this disturbing material. They use real digital artifacts from the era, home videos, and a serious, documentary approach. No cheap thrills or exploitation. The director and experts interviewed throughout discuss their careful, methodical approach to understanding this tragedy (mentioned around 00:13:30), emphasizing the importance of examining root causes rather than simply condemning the perpetrators. They act like experienced guides, showing you this digital landscape without exaggerating, which lends credibility to their ultimately persuasive message.</p>
+
+                        <p>So what do they want from viewers? The message is clear: as a society, and especially as parents, we need to wake up to how powerful—and sometimes dangerous—the digital world can be for kids. It's not just about limiting screen time anymore. We have to understand the actual content and algorithms shaping young minds. The film pushes for real conversations about digital literacy and mental health. Ignoring online subcultures, they argue, isn't an option if we want to prevent similar tragedies.</p>
+
+                        <p>As a piece meant to persuade, this segment largely succeeds. The filmmakers pull us into the girls' world, not just by telling us what happened, but by making us feel it through every cinematic choice they make. Instead of judging from a distance, we start to understand the complex factors at play. You don't just watch their descent. You're swept along with them, experiencing the disorientation and gradual loss of reality that characterized their journey into obsession.</p>
+
+                        <p>However, there are limitations worth noting. In trying so hard to make us sympathize with the perpetrators, the film almost forgets about the victim and her family. It's a tricky ethical line that pops up frequently in true crime storytelling. We spend so much time understanding Morgan and Anissa that the girl they stabbed becomes almost invisible in the narrative. Additionally, by leaning so heavily on emotional appeals, the film risks flattening out complicated issues like mental illness and placing disproportionate blame on the digital world when factors like Morgan's undiagnosed schizophrenia played crucial roles.</p>
+
+                        <p>Even with those limitations, the segment (and really, the whole film) effectively communicates its message. You leave with this uneasy realization: the real monsters of our online age aren't just the spooky stories or creepy images. It's the systems that let fantasy blur into real life without adequate safeguards or adult supervision. Not seeing this danger for what it is? That's what leads to real harm, and that's precisely what the filmmakers want viewers to understand and act upon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="project3" class="content-section">
+                <button class="back-btn" onclick="showHome()">← Back to Home</button>
+                <h2>Project 3: Research Podcast</h2>
+                <div class="project-content">
+                    <p><strong>Status:</strong> In Development</p>
+                    <p><strong>Due Date:</strong> December 2024</p>
+                    
+                    <h3 style="color: #000E2F; margin-top: 30px; font-size: 1.5em;">Podcast Script</h3>
+                    <p>A well-researched, scripted podcast exploring [your topic]. This project combines academic research with engaging audio storytelling, featuring proper citations and public scholarship elements.</p>
+                    
+                    <!-- ADD YOUR SCRIPT AND FINAL PODCAST HERE WHEN COMPLETE -->
+                    <p style="margin-top: 20px;"><em>Script and audio files will be added here upon completion.</em></p>
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2024 Bill Onyedire | English 1007 Portfolio | UConn</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        function showProject(projectId) {
+            document.querySelector('.home-section').classList.add('hidden');
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(projectId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        
+        function showHome() {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelector('.home-section').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
